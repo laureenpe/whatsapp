@@ -1,6 +1,9 @@
 /*navbar*/
-nav{
-    background-color: green;
+header{
+    background-color: #009488;
+    height: 30vh;
+    position: fixed;
+    width: 100%;
 }
 
 body{
@@ -15,12 +18,16 @@ body{
 }
 /*BIG BOX*/
 .box{
-    margin-top: 20px;
     background-color: lightgray;
     position: relative;
+    overflow: scroll;
+    top: 20px;
+
 }
 .border{
         border-right: 1px solid lightgray;
+                overflow: scroll;
+
 }
 .container-frontal{
     margin-bottom: 20px;
