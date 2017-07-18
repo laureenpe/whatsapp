@@ -1,47 +1,60 @@
-/*navbar*/
-header{
+/*header*/
+
+header {
     background-color: #009488;
     height: 30vh;
     position: fixed;
     width: 100%;
 }
 
-body{
+body {
     background-color: lightgray;
 }
 
-.information-text{
+.information-text {
     color: gray;
 }
- a{
+
+a {
     color: black;
 }
+
+
 /*BIG BOX*/
-.box{
+
+.box {
     background-color: lightgray;
     position: relative;
     overflow: scroll;
     top: 20px;
-
 }
-.border{
-        border-right: 1px solid lightgray;
-                overflow: scroll;
 
+.border {
+    border-right: 1px solid lightgray;
+    
 }
-.container-frontal{
+
+.container-frontal {
     margin-bottom: 20px;
 }
 
-.container-box{
+.container-box {
     background-color: white;
     height: 10vh;
 }
+
+.conversations {
+    overflow: scroll;
 }
+
+
 /*IMAGE*/
-.box img{
+
+.box img {
     width: 47px;
 }
+
+
 /*INPUT*/
 
 input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
@@ -53,29 +66,36 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     width: 100%;
     font-size: 1rem;
     margin-top: 20px;
-    margin-bottom: 2px;    
+    margin-bottom: 2px;
 }
-hr{
+
+hr {
     margin-bottom: 0;
     width: 100%;
 }
 
-/*Container conversations*/
-.container-whatsapp-conversations img{
-    width: 40px;
 
+/*Container conversations*/
+
+.container-whatsapp-conversations img {
+    width: 40px;
 }
+
 .container-whatsapp-conversations {
     border-bottom: 1px solid gray;
     height: 10vh;
     background-color: whitesmoke;
     position: relative;
 }
-.paragraph{
+
+.paragraph {
     margin-top: 20px;
 }
+
+
 /*SECOND PART*/
-.container-second{
+
+.container-second {
     background-image: url(../img/chat-panel-bg.png);
     width: 100%;
     height: 78vh;
@@ -84,10 +104,12 @@ hr{
     background-repeat: no-repeat;
 }
 
+
 /*TEXTED*/
-.green{
+
+.green {
     background-color: green;
-    border: 1px solid  lightgray;
+    border: 1px solid lightgray;
     border-radius: 20px;
     text-align: center;
     width: 30%;
