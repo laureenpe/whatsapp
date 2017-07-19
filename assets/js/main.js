@@ -12,7 +12,7 @@ $(document).ready(function () {
 function onKeyPress(event) {
   if (event.keyCode == 13) {
     if ($('#new-whatsapp').val() != '') {//Si el valor de lo que escriba el usuario no esta vacìo, continue.
-      var html = '<div  id="item_' + i + '"><div class="col s12 offset-s1 "><div class="green"  onclick="onSelectItem(item_' + i + ')">' + $("#new-whatsapp").val() + ' </div>' + ' </div>'; //Esta variable crea el html con sus clases y pone un onclick que va creando divs dinamicos, llamando a la clase new-task
+      var html = '<div  id="item_' + i + '"><div class="col s12 offset-s1 "><div class="green-box"  onclick="onSelectItem(item_' + i + ')">' + $("#new-whatsapp").val() + ' </div>' + ' </div>'; //Esta variable crea el html con sus clases y pone un onclick que va creando divs dinamicos, llamando a la clase new-task
       $(".todo-items").append(html);//selecciono el div con la clase y en esta le adiciono el texto html
       $('#new-whatsapp').val(''); //borro contenido
       i++; //vaya sumando mi variable contador
