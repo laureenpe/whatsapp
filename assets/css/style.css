@@ -37,11 +37,11 @@ a {
 .container-frontal {
     margin-bottom: 20px;
 }
-
+/*
 .container-box {
     background-color: white;
     height: 10vh;
-}
+}*/
 
 .conversations {
     overflow: scroll;
@@ -79,6 +79,7 @@ input:not([type]), input[type=text]:not(.browser-default), input[type=password]:
     padding: 0;
     background-color: transparent;
     margin-bottom: 20px;
+    
 }
 
 
