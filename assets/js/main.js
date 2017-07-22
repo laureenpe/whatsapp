@@ -76,7 +76,6 @@ function onClickProfile(event) {
                         
                     </div>`;
     $('.whatsapp-names').html(html);
-    //Change header pictures
     $(".picture-header").html(`<img src="img/` + whatsapp.image + `">`);
     //Change right content messages
     var messages = whatsapp.text;
