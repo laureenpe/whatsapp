@@ -11,4 +11,4 @@ The goal is this:
 And this is the result:
 ![alt text](img/make-it.png "Whatsapp")
 
-- Taking More then 5 hours I made it, using jQuery.
+- Jquery used.
