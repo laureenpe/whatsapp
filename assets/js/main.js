@@ -1,6 +1,8 @@
 /*----------------------STARTING WITH CLICK-----*/
 $(document).ready(function () {
     $('#new-whatsapp').keydown(onKeyPress);//listener para cuando las teclas esten oprimidas.
+    $('#searchText').keydown(onKeyPressNames);//listerne buscador nombres
+
     setupWhatsApp();
     getFromLocalStorage()
 
@@ -32,7 +34,7 @@ function setupWhatsApp() {
     for (var index = 0; index < whatsappUsers.length; index++) {
         var element = whatsappUsers[index];
         html += ` 
-                        <div class="row sideBar-body">
+                        <div class="row sideBar-body  ` +` name_` + element.id+` ">
                             <div class="col-sm-3 col-xs-3 sideBar-avatar">
                                 <div class="avatar-icon">
                                   <img src="img/`+ element.image + `">
@@ -51,9 +53,10 @@ function setupWhatsApp() {
                             </div>
                     </div>`;
     }
+    
     $('.profiles').html(html);
     $('.whatsapp-profile').click(onClickProfile);
-    
+
 
 }
 //Evento para el click y que cambie la información en el panel
@@ -76,10 +79,10 @@ function onClickProfile(event) {
                         
                     </div>`;
     $('.whatsapp-names').html(html);
-    
+
     //Change right content messages
     var messages = whatsapp.text;
-    $(".receiver").html(messages);  
+    $(".receiver").html(messages);
 
 
 }
@@ -96,3 +99,36 @@ function saveToLocalStorage() {
 function getFromLocalStorage() {
     $('.sender').val(localStorage.getItem('sender'));
 }
+
+/*BUSCADOR, este busca el nombre o apellido en el arreglo y retorna true si lo encontró */
+function findName(name) {
+    var result = whatsappUsers.find(function (element) {
+        var r = element.name.indexOf(name);//En qué posición esta el nombre? retorna la posición
+        if(r > -1){ // si la posición es mayor a -1 (-1 xq esto retorna en caso de ser negativo)
+            return true; 
+        }
+    });
+    return result;
+}
+
+
+function onKeyPressNames(event) {
+    if (event.keyCode == 13) {
+        var result = $("#searchText").val();// lo que escribe el usuario
+        if (result != '') {
+            var objectWhastapp = findName(result); //busca el nombre ingresado
+            if (typeof objectWhastapp != "undefined") {
+             if (objectWhastapp.name === "Mariana") {
+                 //$( ".name_1" ).addClass("hide");
+             }
+        } else {
+            alert("Buscador no puede estar vacío")
+
+        }
+    }
+
+}
+}
+
+
+
