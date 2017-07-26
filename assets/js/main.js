@@ -102,20 +102,22 @@ function getFromLocalStorage() {
 function onKeyPressNames(event) {
     if (event.keyCode == 13) {
         //busque el nombre indicado y pintelo
-        var input= findName($("#searchText").val());//Contiene lo que el usuario busca
-        if (input != null) {
+        var input = $("#searchText").val();//Contiene lo que el usuario busca
+        input = input.toLowerCase(); //encuentra mayusculas y inusculas
+        var searchName = findName(input);
+        if (searchName != null & input.length >3) {
             var html = ` 
-                        <div class="row sideBar-body  ` + ` name_` + input.id + ` ">
+                        <div class="row sideBar-body  ` + ` name_` + searchName.id + ` ">
                             <div class="col-sm-3 col-xs-3 sideBar-avatar">
                                 <div class="avatar-icon">
-                                  <img src="img/`+ input.image + `">
+                                  <img src="img/`+ searchName.image + `">
                                 </div>
                             </div>
                             <div class="col-sm-9 col-xs-9 sideBar-main">
                                 <div class="row">
                                     <div class="col-sm-8 col-xs-8 sideBar-name">
-                                        <span  id="conversation_` + input.id + `" data-id="` + input.id + `" href="#" class="whatsapp-profile">` + input.name + `</span><br></a>
-                                            <small class="information-text">`+ input.text + `</small>
+                                        <span  id="conversation_` + searchName.id + `" data-id="` + searchName.id + `" href="#" class="whatsapp-profile">` + searchName.name + `</span><br></a>
+                                            <small class="information-text">`+ searchName.text + `</small>
                                     </div>
                                     <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
                                         <span class="time-meta pull-right">18:18</span>
@@ -127,7 +129,8 @@ function onKeyPressNames(event) {
              $('.profiles').html(html);
 
         } else {
-            alert("es otra persona")
+            alert("es otra persona");
+            setupWhatsApp(); //vuelve a cargar los profiles en caso de que no coincida
         }
 
     }
@@ -146,7 +149,8 @@ function onClickInput() {
 /*BUSCADOR, este busca el nombre o apellido en el arreglo y retorna true si lo encontró */
 function findName(name) {
     var result = whatsappUsers.find(function (element) {
-        var r = element.name.indexOf(name);//En qué posición esta el nombre? retorna la posición
+        var elName = element.name.toLowerCase();//mayuscula o minuscula
+        var r = elName.indexOf(name);//En qué posición esta el nombre? retorna la posición
         if (r > -1) { // si la posición es mayor a -1 (-1 xq esto retorna en caso de ser negativo)
             return true;
         }
